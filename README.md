@@ -13,7 +13,7 @@ python experiment.py
 ``` 
 or using the Pshycopy Coder UI 
 ```bash 
-python3 -m psychopy.app.psychopyApp 
+python -m psychopy.app.psychopyApp 
 ```
 
 Note please adjust PRIMARY_SCREEN_SIZE and SECONDARY_SCREEN_SIZE to suite your needs and screen resolutions
