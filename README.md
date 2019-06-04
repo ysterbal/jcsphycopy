@@ -7,7 +7,14 @@ This script simply runs on duel Monitors, it creates two Windows one per screen 
 To support full screen usage the code expects to be run with the commandline parameter of -O to unset the __debug__ built-in for python, in debug we display the Windows as non decorated Windows to allow for debugging.
 
 ### Usage
-This can be used in either a commandline python environment with Psychopy installed, using ''' python experiment.py ''' or using the Pshycopy Coder UI ''' python3 -m psychopy.app.psychopyApp '''
+This can be used in either a commandline python environment with Psychopy installed, using 
+```bash 
+python experiment.py 
+``` 
+or using the Pshycopy Coder UI 
+```bash 
+python3 -m psychopy.app.psychopyApp 
+```
 
 Note please adjust PRIMARY_SCREEN_SIZE and SECONDARY_SCREEN_SIZE to suite your needs and screen resolutions
 
