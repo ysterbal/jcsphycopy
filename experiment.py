@@ -12,7 +12,7 @@ else:
     FULL_SCREEN = True
 
 # Setup the windows, we will use framed for debugging but full screen for release
-#window_primary = visual.Window(size=PRIMARY_SCREEN_SIZE,units="pix", screen=0,allowGUI=False,fullscr=FULL_SCREEN)
+window_primary = visual.Window(size=PRIMARY_SCREEN_SIZE,units="pix", screen=0,allowGUI=False,fullscr=FULL_SCREEN)
 window_secondary = visual.Window(size=SECONDARY_SCREEN_SIZE,units="pix", screen=1,allowGUI=False,fullscr=FULL_SCREEN)
 
 # Setup the visuals to be displayed
@@ -44,14 +44,10 @@ stimulant.reset()
 clock.reset()
 
 # Clean up windows
-#window_primary.release()
-#window_primary.close()
-
+window_primary.release()
+window_primary.close()
 window_secondary.release()
 window_secondary.close()
-
-# Wait for user to press a key
-waitKeys()
 
 # Exit application
 exit
