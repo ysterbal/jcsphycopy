@@ -19,23 +19,23 @@ window_secondary = visual.Window(size=SECONDARY_SCREEN_SIZE,units="pix", screen=
 # Setup stimulus
 stimulant = visual.GratingStim(window_secondary,units="pix",size=SECONDARY_SCREEN_SIZE)
 
-stimulant.autoDraw = False  # Automatically draw every frame
+stimulant.autoDraw = False  # Automatically draw every frame, if we do this then we do not need the .draw but we have less control
 stimulant.autoLog = False  # Or we'll get many messages about phase change
 
 # Start 
-clock = core.Clock()
+clock = core.Clock() # Get a clock that we can use for timing 
 # Loop forever 
 while 1: # Change this for conditional looping (not forever)
     while clock.getTime() < 200.0:  # Do stimulant for 200s
         if 0.5 <= clock.getTime() < 4.0: 
-            stimulant.phase += 0.1  # Increment by 10th of cycle
+            stimulant.phase += 0.1  # Increment phase
         else: 
-            stimulant.phase -= 0.1  # Increment by 10th of cycle
-        stimulant.draw()
-        window_secondary.flip()
-        core.wait(.1)
+            stimulant.phase -= 0.1  # Decrement phase
+        stimulant.draw() # Draw the stimulant into the back buffer
+        window_secondary.flip() # Force the screen to update from the back back buffer
+        core.wait(.1) # Added wait as on some fast machines the refresh is too fast 
     clock.reset()
-    window_secondary.clearBuffer()
+    window_secondary.clearBuffer() # We must clear the back buffer to ensure we have just a plain background
     while clock.getTime() < 100.0:  # Do nothing for 100s
         window_secondary.flip()
 
